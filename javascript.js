@@ -24,5 +24,36 @@ function showSidebar() {
     sidebar.style.display = 'none';
   }
   
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.contact-form form');
+  const thankYou = document.getElementById('thank-you-message');
 
+  if (!form) return;
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        thankYou.style.display = 'block';
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Oops! There was a problem submitting your form.");
+    }
+  });
+});
   
