@@ -338,6 +338,14 @@ button:hover{
 
 }
 
+#thank-you-message {
+  display: none;
+}
+
+#thank-you-message.show {
+  display: block;
+}
+
 /* project pages */
 /*project 1*/
 
