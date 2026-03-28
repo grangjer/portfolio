@@ -16,13 +16,12 @@ function topFunction() {
 
 
 function showSidebar() {
-  document.getElementById("sidebar").style.right = "0";
+    document.getElementById("sidebar").style.right = "0";
 }
 
 function hideSidebar() {
-  document.getElementById("sidebar").style.right = "-300px";
+    document.getElementById("sidebar").style.right = "-250px";
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.contact-form form');
