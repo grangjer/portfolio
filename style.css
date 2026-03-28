@@ -33,19 +33,18 @@ nav {
     max-width: 110px;
     margin: 35px 0px 8px 98px;
 }
-.sidebar{
+.sidebar {
     position: fixed;
     top: 0;
-    right: 0;
-    height: 500px;
+    right: -300px; /* hidden off screen */
+    height: 100vh;
     width: 250px;
-    z-index: 999;
     background-color: lightgray;
-    color: black;
-    box-shadow: -10px 0 10px black;
-    display: none;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+    display: flex;
     flex-direction: column;
-
+    transition: right 0.3s ease;
+    padding-top: 20px;
 }
 
 .sidebar a{
@@ -69,6 +68,25 @@ nav {
     margin: 0;
     border: solid skyblue 1px;
     cursor: pointer;
+}
+.navigation a {
+    position: relative;
+    padding: 8px 12px;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: skyblue;
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%;
 }
 
 /* Media queries for responsiveness */
@@ -102,6 +120,20 @@ nav {
         display: block;
     }
 
+}
+@media (max-width: 800px) {
+    .projects {
+        gap: 25px;
+    }
+
+    .text {
+        padding: 10px;
+    }
+
+    .sidebar a {
+        font-size: 20px;
+        padding: 15px;
+    }
 }
 
 /* footer */
@@ -166,8 +198,24 @@ h1{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px; 
+
+}
+.projects > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
 }
 
+.projects > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.image {
+    transition: transform 0.4s ease;
+}
+
+.projects > div:hover .image {
+    transform: scale(1.05);
+}
 .projects-1 img, .projects-2 img, .projects-3 img, .projects-4 img, .projects-5 img, .projects-6 img{
     max-width: 500px;
 }
@@ -211,6 +259,42 @@ h1{
 
 .projects-2, .projects-4, .projects-6{
     margin-right: 20%;
+}
+
+.projects > div {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.projects > div:nth-child(1) { animation-delay: 0.1s; }
+.projects > div:nth-child(2) { animation-delay: 0.2s; }
+.projects > div:nth-child(3) { animation-delay: 0.3s; }
+.projects > div:nth-child(4) { animation-delay: 0.4s; }
+.projects > div:nth-child(5) { animation-delay: 0.5s; }
+.projects > div:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text h2 {
+    transition: color 0.3s ease;
+}
+
+.projects > div:hover .text h2 {
+    color: skyblue;
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
 }
 
 /* about */
