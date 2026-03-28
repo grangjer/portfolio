@@ -579,3 +579,21 @@ img{
 #back-to-top-btn:hover {
     border: solid 1px dimgray; 
 }
+
+@media (max-width: 900px) {
+    .projects {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .projects > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .projects img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
