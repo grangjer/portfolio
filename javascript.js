@@ -14,16 +14,16 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+
 function showSidebar() {
-    var sidebar = document.getElementById("sidebar");
-    sidebar.style.display = 'flex';
-  }
-  
-  function hideSidebar() {
-    var sidebar = document.getElementById("sidebar");
-    sidebar.style.display = 'none';
-  }
-  
+  document.getElementById("sidebar").style.right = "0";
+}
+
+function hideSidebar() {
+  document.getElementById("sidebar").style.right = "-300px";
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.contact-form form');
   const thankYou = document.getElementById('thank-you-message');
