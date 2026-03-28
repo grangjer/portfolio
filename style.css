@@ -25,8 +25,25 @@ nav {
     gap: 20px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+.navigation a:hover {
+    border-bottom: 2px solid skyblue;
+}
+
 .desktop {
-    display: block;
+    display: inline-block;
 }
 
 .menu-bar {
@@ -124,14 +141,14 @@ nav {
 
 }
 }
-@media only screen and (max-width: 800px) {
-    .desktop{
-        display: none;
-    }
-    .menu-bar{
-        display: block;
+@media (max-width: 800px) {
+    .desktop {
+        display: none !important;
     }
 
+    .menu-bar {
+        display: block;
+    }
 }
 @media (max-width: 800px) {
     .projects {
@@ -239,11 +256,6 @@ h1{
     transform: scale(0.8); 
   }
 
-.projects-1, .projects-3, .projects-5{
-    margin-left: 30%;
-    margin-bottom: 50px;
-    
-}
 
 .text{
     text-align: left;
@@ -260,14 +272,13 @@ h1{
     margin-bottom: 10px;
 }
 
-.projects-2, .projects-4, .projects-6{
-    margin-right: 20%;
-}
 
 .projects > div {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
+    margin: 0 auto;
+    max-width: 500px;
 }
 
 .projects > div:nth-child(1) { animation-delay: 0.1s; }
@@ -298,6 +309,12 @@ a {
 
 a:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .projects {
+        gap: 30px;
+    }
 }
 
 /* about */
