@@ -356,6 +356,67 @@ a:hover {
 
 }
 
+@media (max-width: 1100px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo img {
+        width: 70%;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .intro {
+        max-width: 90%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .skills {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 800px){
+    .quote{
+        margin-left: 10%
+    }
+
+    .intro h1{
+        font-size: 60px;
+    }
+    .name-highlight{
+        font-size: 60px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .quote p {
+        font-size: 1.1rem;
+        margin-left: 5px;
+    }
+
+    .intro h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro p {
+        font-size: 0.95rem;
+    }
+
+    .skills h3 {
+        font-size: 1.2rem;
+    }
+
+    .skills p {
+        font-size: 0.9rem;
+    }
+}
 
 /* Contact */
 
@@ -430,6 +491,29 @@ button:hover{
 
 #thank-you-message.show {
   display: block;
+}
+@media (max-width: 1080px){
+    button{
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 900px){
+    button{
+        font-size: 13px;
+        padding: 10px;
+    }
+
+}
+
+@media (max-width: 800px){
+    button{
+        padding: 5px;
+        font-size: 10px;
+        
+    }
+
 }
 
 /* project pages */
@@ -562,3 +646,53 @@ img{
     border: solid 1px dimgray; 
 }
 
+@media (max-width: 1024px) {
+    .overview, .background {
+        max-width: 80%;
+    }
+
+    .poster img {
+        max-width: 90%;
+    }
+
+    .left, .right {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .overview, .background {
+        max-width: 95%;
+        margin: 20px auto;
+    }
+
+    .poster img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .left, .right {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-project h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-project p {
+        font-size: 0.9rem;
+    }
+
+    .page {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
