@@ -1,19 +1,23 @@
-window.onscroll = function() {scrollFunction()};
+document.addEventListener("DOMContentLoaded", function() {
+  const backToTopBtn = document.getElementById("back-to-top-btn");
 
-function scrollFunction() {
-    var btn = document.getElementById("back-to-top-btn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-}
+  // Show/hide button on scroll
+  window.addEventListener("scroll", function() {
+      if (window.scrollY > 200) {  // show after scrolling down 200px
+          backToTopBtn.style.display = "block";
+      } else {
+          backToTopBtn.style.display = "none";
+      }
+  });
 
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
+  // Smooth scroll to top
+  backToTopBtn.addEventListener("click", function() {
+      window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+      });
+  });
+});
 
 function showSidebar() {
     document.getElementById("sidebar").style.right = "0";
@@ -55,4 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-  
