@@ -76,11 +76,6 @@ a:active {
     display: none;
 }
 
-.navigation .active{
-    border-bottom: solid skyblue 2px;
-    padding: 10px;
-
-}
 
 .navigation a:hover{
     background-color:transparent;
@@ -286,9 +281,14 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-    .projects {
+    .projects{
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .projects-1, .projects-2, .projects-3, .projects-4, .projects-5, .projects-6 {
+        border: solid skyblue 2px;
+
     }
 }
 
@@ -401,8 +401,8 @@ a:hover {
         margin-left: 5px;
     }
 
-    .intro h1 {
-        font-size: 1.5rem;
+    .intro h1, .name-highlight {
+        font-size: 2.0rem;
     }
 
     .intro p {
@@ -501,7 +501,8 @@ button:hover{
 
 @media (max-width: 900px){
     button{
-        font-size: 13px;
+        width: 50px;
+        font-size: 15px;
         padding: 10px;
     }
 
@@ -648,34 +649,28 @@ img{
 
 @media (max-width: 1024px) {
     .overview, .background {
-        max-width: 80%;
-    }
-
-    .poster img {
         max-width: 90%;
     }
 
-    .left, .right {
-        max-width: 80%;
-    }
 }
 
 @media (max-width: 768px) {
     .overview, .background {
-        max-width: 95%;
-        margin: 20px auto;
+        max-width: 90%;
+        margin: 10px auto;
     }
 
     .poster img {
         max-width: 100%;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
-    .left, .right {
+    .left, .right, .wireframe {
         margin: 20px auto;
         text-align: center;
-    }
-
+                width: 90%;
+            }
+        
     .meta-row {
         flex-direction: column;
         align-items: flex-start;
@@ -683,8 +678,8 @@ img{
 }
 
 @media (max-width: 480px) {
-    .title-project h1 {
-        font-size: 1.5rem;
+    .title-project h1, .research h1 {
+        font-size: 2.5rem;
     }
 
     .title-project p {
@@ -694,5 +689,9 @@ img{
     .page {
         padding: 8px;
         font-size: 0.9rem;
+    }
+
+    .left img, .right img{
+        width: 90%;
     }
 }
